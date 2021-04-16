@@ -5,14 +5,11 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
-import org.springframework.data.neo4j.core.schema.Relationship;
-
-import java.util.List;
 
 @NoArgsConstructor
 @Data
 @Node
-public class User {
+public class Actor {
 
     @Id
     @GeneratedValue
@@ -20,11 +17,5 @@ public class User {
 
     private String name;
 
-    private Integer age;
-
-//    @Relationship(type= "RATED", direction = Relationship.Direction.INCOMING)
-//    private List<Movie> listMovie;
-
-    @Relationship(type = "RATED")
-    private List<Rated> listRated;
+    private Boolean star;
 }

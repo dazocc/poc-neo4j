@@ -44,4 +44,22 @@ delete
 curl -X DELETE http://localhost:8081/user/5
 
 save with movies
-curl -X POST -H "Content-Type: application/json" -d '{"name":"DAZO","age":"38", "listMovie": [{"title": "teste title", "director": "teste director"}]}' http://localhost:8081/user
+curl -X POST -H "Content-Type: application/json" -d '{"name":"DAZO","age":"38", "listRated": [{"rating": 5, "movie": {"title": "teste title", "director": "teste director"}}]}' http://localhost:8081/user
+
+----------------------------------------------------------------------------------------------
+
+
+listAll
+curl -X GET  http://localhost:8081/movie
+
+RetrieveById
+curl -X GET  http://localhost:8081/movie/1
+
+save
+curl -X POST -H "Content-Type: application/json" -d '{"title":"Spider-Man","director":"Sam Raimi", "listActor": [{"name": "Tobey Maguire", "star": true}, {"name": "Kirsten Dunst", "star": false}]}' http://localhost:8081/movie
+
+update
+curl -X PUT -H "Content-Type: application/json" -d '{"title":"Spider-Man","director":"Sam Raimi2"}' http://localhost:8081/movie/8
+
+delete
+curl -X DELETE http://localhost:8081/movie/8
