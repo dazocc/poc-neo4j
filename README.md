@@ -27,3 +27,21 @@ create (Inception)-[:RATED {rating: 8}]->(Sam)
 create (DarkKnight)-[:RATED {rating: 9}]->(Sam)
 
 create (DarkKnight)-[:RATED {rating: 8}]->(Peter)
+
+listAll
+curl -X GET  http://localhost:8081/user 
+
+RetrieveById
+curl -X GET  http://localhost:8081/user/2
+
+save
+curl -X POST -H "Content-Type: application/json" -d '{"name":"DAZO","age":"38"}' http://localhost:8081/user
+
+update
+curl -X PUT -H "Content-Type: application/json" -d '{"name":"DAZO2","age":"39"}' http://localhost:8081/user/5
+
+delete
+curl -X DELETE http://localhost:8081/user/5
+
+save with movies
+curl -X POST -H "Content-Type: application/json" -d '{"name":"DAZO","age":"38", "listMovie": [{"title": "teste title", "director": "teste director"}]}' http://localhost:8081/user
